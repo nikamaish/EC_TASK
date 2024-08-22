@@ -3,13 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 const Work = () => {
-
+  
   const handleGitHubClick = () => {
-    const githubId = prompt("Please enter your GitHub ID:");
-    if (githubId) {
-      // Redirect to GitHub OAuth authorization URL or initiate the authorization process
-      window.location.href = `https://github.com/login/oauth/authorize?client_id=YOUR_CLIENT_ID&scope=repo&login=${githubId}`;
-    }
+
+    const client_id = process.env.REACT_APP_CLIENT_ID
+    // console.log(client_id)
+    window.location.href = `https://github.com/login/oauth/authorize?client_id=${client_id}&scope=repo`;
   };
 
   return (

@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -6,6 +6,26 @@ const Resume = () => {
   const fileInputRef = useRef(null);
   const [fileName, setFileName] = useState('');
   const [fileUrl, setFileUrl] = useState('');
+
+  useEffect(() => {
+    // Load file info from local storage on component mount
+    const savedFileName = localStorage.getItem('fileName');
+    const savedFileUrl = localStorage.getItem('fileUrl');
+
+    if (savedFileName && savedFileUrl) {
+      setFileName(savedFileName);
+      setFileUrl(savedFileUrl);
+    }
+  }, []);
+
+  useEffect(() => {
+    // Cleanup object URL when the component unmounts or fileUrl changes
+    return () => {
+      if (fileUrl) {
+        URL.revokeObjectURL(fileUrl);
+      }
+    };
+  }, [fileUrl]);
 
   const addResume = () => {
     if (fileInputRef.current) {
@@ -16,10 +36,13 @@ const Resume = () => {
   const handleFileChange = (event) => {
     const file = event.target.files[0];
     if (file) {
-      setFileName(file.name);
-
       const url = URL.createObjectURL(file);
+      setFileName(file.name);
       setFileUrl(url);
+
+      // Save file info to local storage
+      localStorage.setItem('fileName', file.name);
+      localStorage.setItem('fileUrl', url);
     }
   };
 
