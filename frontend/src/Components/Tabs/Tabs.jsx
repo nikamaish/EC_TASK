@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import Resume from '../Resume/Resume';
+import Work from '../Work/Work';  
+
 
 
 const Tabs = () => {
@@ -34,7 +36,7 @@ const Tabs = () => {
         </button>
       </div>
       <div className="p-4 border border-gray-300">
-        {activeTab === 'tab1' && <div className="text-gray-700"></div>}
+        {activeTab === 'tab1' && <div className="text-gray-700"><Work/></div>}
         {activeTab === 'tab2' && <div className="text-gray-700"><Resume/></div>}
       </div>
     </div>
