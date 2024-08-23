@@ -13,6 +13,7 @@ const Signup = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    // here name is from the input, which is the attribute name of the input field
     setFormData({ ...formData, [name]: value });
   };
 
@@ -22,16 +23,17 @@ const Signup = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    // The e.preventDefault() method is called to prevent the default form submission behavior, which would cause the page to refresh.
     // Handle form submission
     console.log(formData);
   };
 
   return (
-<div className="mx-auto p-6 px-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg shadow-2xl" style={{ maxWidth: '800px' }}>
+<div className="mx-auto my-10 p-6 px-20 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-lg shadow-2xl" style={{ maxWidth: '800px' }}>
 
 <h2 className="text-3xl font-bold text-white mb-6 text-center">Signup</h2>
 
-      <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 rounded-lg shadow-lg">
+      <form onSubmit={handleSubmit} className="space-y-6 bg-white p-8 my-10 rounded-lg shadow-lg">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</label>
           <input

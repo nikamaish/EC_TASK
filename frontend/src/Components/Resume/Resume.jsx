@@ -19,7 +19,7 @@ const Resume = () => {
   }, []);
 
   useEffect(() => {
-    // Cleanup object URL when the component unmounts or fileUrl changes
+    // Cleanup object URL when the component  fileUrl changes
     return () => {
       if (fileUrl) {
         URL.revokeObjectURL(fileUrl);
