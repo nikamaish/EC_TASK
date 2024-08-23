@@ -50,14 +50,14 @@ const Work = () => {
             GitHub
             <FontAwesomeIcon icon={faPlus} className="ml-2" />
           </button>
-          <button className="flex items-center justify-center bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
+          {/* <button className="flex items-center justify-center bg-yellow-500 text-white py-2 px-4 rounded hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-yellow-300">
             LeetCode
             <FontAwesomeIcon icon={faPlus} className="ml-2" />
           </button>
           <button className="flex items-center justify-center bg-green-500 text-white py-2 px-4 rounded hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-300">
             Medium
             <FontAwesomeIcon icon={faPlus} className="ml-2" />
-          </button>
+          </button> */}
         </div>
       )}
     </div>
