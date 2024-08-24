@@ -1,8 +1,8 @@
 import pool from '../db/db';  // Import the database pool
 
 export interface User {
-  id?: number;
-  name: string;
+  id?: number; 
+  name: string; 
   email: string;
   password: string;
   profilePicture?: string;
@@ -12,6 +12,7 @@ export interface User {
 }
 
 // Function to create a new user in the database
+// The purpose of this function is to create a user based on the provided userData
 export const createUser = async (userData: User): Promise<number> => {
   const { name, email, password, profilePicture, bio, skills, location } = userData; // destructuring
   try {

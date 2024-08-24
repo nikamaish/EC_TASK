@@ -20,16 +20,7 @@ app.get('/', (c) => {
 return c.text('Hello, World!')
 })
 
-app.route('/done', userRoutes);
-
-// app.get('/users', async (c) => {
-//   try {
-//     const [rows] = await pool.query('SELECT * FROM github');
-//     return c.json(rows);  // Send JSON response for successful data retrieval
-//   } catch (error) {
-//     return c.text('Failed to retrieve data', 500);  // Send plain text with status code
-//   }
-// });
+app.route('/users', userRoutes);
 
 
 app.get('/auth/github/callback', async (c) => {
